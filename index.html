@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CurryCat | Links</title>
+  <title>CurryCat | Linktree</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     * {
@@ -24,7 +24,6 @@
       position: relative;
     }
 
-   
     body::before {
       content: '';
       position: fixed;
@@ -42,7 +41,6 @@
       50% { opacity: 0.8; transform: scale(1.1); }
     }
 
-  
     .grid {
       position: fixed;
       inset: 0;
@@ -68,7 +66,6 @@
       margin: 20px;
     }
 
-   
     .avatar-wrapper {
       position: relative;
       width: 140px;
@@ -114,7 +111,6 @@
       100% { filter: blur(20px) hue-rotate(360deg); }
     }
 
-    
     .name {
       text-align: center;
       font-size: 32px;
@@ -141,7 +137,6 @@
       font-weight: 500;
     }
 
-  
     .links {
       display: flex;
       flex-direction: column;
@@ -192,7 +187,6 @@
       transform: translateY(-2px);
     }
 
-    
     .link-icon {
       width: 24px;
       height: 24px;
@@ -208,7 +202,6 @@
       z-index: 1;
     }
 
-    
     .link.discord:hover {
       box-shadow: 
         0 10px 40px rgba(88,101,242,0.3),
@@ -227,7 +220,7 @@
         0 0 20px rgba(240,80,255,0.4);
     }
 
-   
+
     footer {
       text-align: center;
       margin-top: 48px;
@@ -237,7 +230,7 @@
       letter-spacing: 0.5px;
     }
 
-    
+  
     .particle {
       position: fixed;
       width: 4px;
@@ -251,22 +244,16 @@
 
     @keyframes particleFloat {
       0% {
-        transform: translateY(100vh) translateX(0) scale(0);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
+        transform: translateY(0) translateX(0) scale(1);
         opacity: 1;
       }
       100% {
-        transform: translateY(-100vh) translateX(100px) scale(1);
+        transform: translateY(-100vh) translateX(100px) scale(0);
         opacity: 0;
       }
     }
 
-    
+  
     @media (max-width: 480px) {
       .container {
         padding: 32px 20px;
@@ -326,12 +313,14 @@
   </div>
 
   <script>
+  
     for (let i = 0; i < 20; i++) {
       const particle = document.createElement('div');
       particle.className = 'particle';
       particle.style.left = Math.random() * 100 + '%';
-      particle.style.animationDelay = Math.random() * 20 + 's';
-      particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+      particle.style.top = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 5 + 's';
+      particle.style.animationDuration = (8 + Math.random() * 6) + 's';
       document.body.appendChild(particle);
     }
   </script>
