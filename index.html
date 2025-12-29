@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rick Vibe Linktree</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg1: #4b2e83;
+      --bg2: #c12c8a;
+      --bg3: #ff8a3d;
+      --card: rgba(20, 10, 30, 0.75);
+      --border: #9cf6ff;
+      --text: #eaffff;
+      --accent: #00f0ff;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, var(--bg1), var(--bg2), var(--bg3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 32px 20px 40px;
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 24px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 40px rgba(0, 255, 255, 0.25);
+      position: relative;
+      z-index: 1;
+    }
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: #fff;
+      border: 4px solid var(--accent);
+      background-image: url('rick.png');
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0;
+      font-size: 28px;
+      font-weight: 800;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    }
+
+    p {
+      text-align: center;
+      margin: 8px 0 28px;
+      opacity: 0.85;
+    }
+
+    .link {
+      display: block;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #1ef7ff, #8bffff);
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 6px 0 #0bb;
+    }
+
+    .link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 #0bb;
+    }
+
+    .link:active {
+      transform: translateY(2px);
+      box-shadow: 0 4px 0 #0bb;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 12px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <div class="container">
+    <div class="avatar"></div>
+    <h1>@cybersecurity.og</h1>
+    <p>Wubba Lubba Dub Dub</p>
+
+    <a class="link" href="https://discord.gg/UPVcRep4Wp">Discord</a>
+    <a class="link" href="https://github.com/currycatdev">GitHub</a>
+
+    <footer>Multiverse approved</footer>
+  </div>
+</body>
+</html>
