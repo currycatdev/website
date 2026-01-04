@@ -28,18 +28,33 @@
     body::before {
       content: '';
       position: fixed;
-      inset: 0;
+      inset: -50%;
+      width: 200%;
+      height: 200%;
       background: 
         radial-gradient(circle at 20% 50%, rgba(120, 50, 255, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, rgba(255, 50, 150, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 40% 20%, rgba(0, 200, 255, 0.1) 0%, transparent 50%);
-      animation: gradientShift 15s ease infinite;
+      animation: gradientShift 20s ease-in-out infinite;
       z-index: 0;
     }
 
     @keyframes gradientShift {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.1); }
+      0% {
+        transform: translate(0%, 0%);
+      }
+      25% {
+        transform: translate(3%, -4%);
+      }
+      50% {
+        transform: translate(-2%, 3%);
+      }
+      75% {
+        transform: translate(4%, 2%);
+      }
+      100% {
+        transform: translate(0%, 0%);
+      }
     }
 
     /* Grid overlay */
@@ -51,12 +66,6 @@
         linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
       background-size: 50px 50px;
       z-index: 0;
-      animation: gridMove 20s linear infinite;
-    }
-
-    @keyframes gridMove {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(50px, 50px); }
     }
 
     .container {
