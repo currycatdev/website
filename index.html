@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>currycat | nichts passiert mehr</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>currycat | links</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -15,9 +15,8 @@
     body {
       font-family: 'Inter', system-ui, sans-serif;
       min-height: 100vh;
-      background: #050505;
-      color: #8a8a8e;
-      overflow-x: hidden;
+      background: #0b0b12;
+      color: #c0c0d0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -28,8 +27,8 @@
       content: '';
       position: fixed;
       inset: 0;
-      background: radial-gradient(ellipse at bottom, #0a000a 0%, #000000 70%);
-      opacity: 0.95;
+      background: radial-gradient(circle at 70% 30%, rgba(80,40,140,0.08), transparent 40%),
+                  radial-gradient(circle at 20% 80%, rgba(40,80,140,0.06), transparent 50%);
       z-index: -2;
     }
 
@@ -37,17 +36,16 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 420px;
-      padding: 60px 24px;
+      max-width: 460px;
+      padding: 60px 28px;
       text-align: center;
     }
 
     .avatar-wrapper {
-      position: relative;
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       margin: 0 auto 32px;
-      filter: grayscale(85%) brightness(0.55) contrast(0.9);
+      position: relative;
     }
 
     .avatar {
@@ -56,121 +54,84 @@
       border-radius: 50%;
       background-image: url('https://cdn.bigfox24.site/currycat.jpg');
       background-size: cover;
-      background-position: center;
-      border: 1px solid #111;
-      box-shadow: inset 0 0 40px #000;
-      opacity: 0.45;
+      border: 3px solid rgba(60,60,90,0.4);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+      filter: brightness(0.92) saturate(0.75);
     }
 
     .name {
-      font-size: 26px;
-      font-weight: 400;
-      color: #444;
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: #a0a0c0;
+      margin-bottom: 6px;
       letter-spacing: -0.5px;
-      margin-bottom: 8px;
     }
 
-    .realname {
-      font-size: 13px;
-      color: #222;
+    .tag {
+      color: #606080;
+      font-size: 0.95rem;
       margin-bottom: 28px;
-      font-weight: 300;
     }
 
     .bio {
-      color: #333;
-      font-size: 14px;
-      line-height: 1.5;
-      margin-bottom: 52px;
+      color: #9090a8;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 48px;
       font-weight: 300;
-      letter-spacing: -0.2px;
     }
 
     .links {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 16px;
     }
 
     .link {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      padding: 16px 24px;
-      background: rgba(15,15,15,0.6);
-      border: 1px solid #111;
-      border-radius: 8px;
-      color: #555;
+      gap: 14px;
+      padding: 18px 26px;
+      background: rgba(30,30,50,0.45);
+      border: 1px solid rgba(80,80,120,0.3);
+      border-radius: 12px;
+      color: #b0b0d0;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 1.05rem;
       font-weight: 400;
-      transition: all 0.4s ease;
-      pointer-events: all;
-      position: relative;
-      overflow: hidden;
+      transition: all 0.35s ease;
+      backdrop-filter: blur(6px);
     }
 
     .link:hover {
-      color: #777;
-      background: rgba(20,20,20,0.7);
-      border-color: #222;
-      transform: translateY(-1px);
-    }
-
-    .link:active {
-      transform: translateY(0);
+      background: rgba(45,45,70,0.6);
+      border-color: rgba(100,100,160,0.5);
+      color: #e0e0ff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
 
     .link-icon {
-      width: 22px;
-      height: 22px;
-      opacity: 0.4;
-      transition: opacity 0.4s;
+      width: 24px;
+      height: 24px;
+      opacity: 0.7;
+      transition: opacity 0.35s;
     }
 
     .link:hover .link-icon {
-      opacity: 0.65;
-    }
-
-    .link-text {
-      opacity: 0.8;
+      opacity: 1;
     }
 
     footer {
-      margin-top: 70px;
-      color: #222;
-      font-size: 12px;
+      margin-top: 60px;
+      color: #505070;
+      font-size: 0.85rem;
       font-weight: 300;
-      letter-spacing: 0.5px;
-    }
-
-    .rain {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: -1;
-      overflow: hidden;
-    }
-
-    .drop {
-      position: absolute;
-      width: 2px;
-      height: 60px;
-      background: linear-gradient(transparent, rgba(40,40,80,0.25));
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      to {
-        transform: translateY(120vh);
-      }
     }
   </style>
 </head>
 <body>
-
-  <div class="rain"></div>
 
   <div class="container">
     <div class="avatar-wrapper">
@@ -178,13 +139,13 @@
     </div>
 
     <div class="name">currycat</div>
-    <div class="realname">@cybersecurity.og</div>
+    <div class="tag">@cybersecurity.og</div>
 
     <p class="bio">
-      noch hier.<br>
-      code schreiben • nichts fertigstellen •<br>
-      bugs fixen die morgen wieder da sind<br>
-      3:47 Uhr ist mein neuer Mittag
+      meistens am coden<br>
+      manchmal am schlafen<br>
+      sehr oft am prokrastinieren<br>
+      aber irgendwie geht’s weiter… irgendwie
     </p>
 
     <div class="links">
@@ -192,44 +153,26 @@
         <span class="link-icon">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515..."/></svg>
         </span>
-        <span class="link-text">discord (manchmal online)</span>
+        <span class="link-text">Discord</span>
       </a>
 
       <a class="link" href="https://bigfox24.site">
         <span class="link-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
         </span>
-        <span class="link-text">website (seit 8 monaten nicht angefasst)</span>
+        <span class="link-text">Website</span>
       </a>
 
       <a class="link" href="https://github.com/currycatdev">
         <span class="link-icon">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12..."/></svg>
         </span>
-        <span class="link-text">github (137 unpushed commits)</span>
+        <span class="link-text">GitHub</span>
       </a>
     </div>
 
-    <footer>··· wahrscheinlich bald weg ···</footer>
+    <footer>··· just existing since 3:33 AM ···</footer>
   </div>
 
-  <script>
-    // sehr langsame, traurige regen animation
-    function createDrop() {
-      const drop = document.createElement('div');
-      drop.className = 'drop';
-      drop.style.left = Math.random() * 100 + 'vw';
-      drop.style.animationDuration = (0.8 + Math.random() * 1.8) + 's';
-      drop.style.animationDelay = Math.random() * 5 + 's';
-      drop.style.opacity = Math.random() * 0.35 + 0.1;
-      document.querySelector('.rain').appendChild(drop);
-      
-      setTimeout(() => drop.remove(), 8000);
-    }
-
-    setInterval(createDrop, 180);
-    // etwas mehr am Anfang
-    for(let i = 0; i < 35; i++) createDrop();
-  </script>
 </body>
 </html>
